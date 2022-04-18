@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultActivity"
+    android:orientation="vertical"
+    android:padding="20dp">
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RESULT"
+        android:layout_gravity="center"
+        android:fontFamily="@font/chakra_petch_bold"
+        android:textColor="@color/black"
+        android:textSize="30sp">
+    </TextView>
+
+    <ImageView
+        android:id="@+id/result_imageview"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/skyline">
+    </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Hey,Congratulations!"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/chakra_petch_bold"
+        android:textColor="@color/black">
+    </TextView>
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Sluganaroda"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/chakra_petch_bold"
+        android:textColor="@color/black">
+    </TextView>
+    <TextView
+        android:id="@+id/total_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Your score is"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/chakra_petch_bold"
+        android:textColor="@color/black">
+    </TextView>
+    <TextView
+        android:id="@+id/total_answers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Your score is"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/chakra_petch_bold"
+        android:textColor="@color/black">
+    </TextView>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_start"
+        android:layout_marginTop="16dp"
+        android:background="@color/gray"
+        android:text="Finish "
+        android:textSize="18sp"
+        android:textColor="@color/white">
+    </Button>
+</LinearLayout>
