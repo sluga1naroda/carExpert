@@ -9,10 +9,16 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.example.tetrisapp.databinding.ActivityQuizQuestionsBinding
+import com.example.tetrisapp.databinding.ActivityResultBinding
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_quiz_questions.*
 
 class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
+
+    private lateinit var binding : ActivityQuizQuestionsBinding
 
     private var mCurrentPosition: Int = 1
     private var mQuestionList : ArrayList<Question>? = null
@@ -23,6 +29,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_questions)
+        binding = ActivityQuizQuestionsBinding.inflate(layoutInflater).also{setContentView(it.root)}
 
         mQuestionList = Constants.getQuestions()
         setQuestion()
@@ -47,7 +54,13 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         progressbar.progress = mCurrentPosition
         tv_progress.text = "$mCurrentPosition" + "/" + progressbar.max
         ask_question.text = question!!.question
-        iv_image.setImageResource(question.image)
+        Glide.with(this)
+            .load(question.image)
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
+            .error(R.drawable.error_connection)
+            .optionalFitCenter()
+            .centerCrop()
+            .into(binding.ivImage)
         tv_option_one.text = question.optionOne
         tv_option_two.text = question.optionTwo
         tv_option_three.text = question.optionThree
